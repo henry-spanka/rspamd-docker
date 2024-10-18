@@ -21,11 +21,3 @@ jobs:
     with:
       image: ghcr.io/${{ github.repository }}:nightly
       tag: "${{ needs.build.outputs.tag }}"
-
-  promote:
-    needs: [build, test]
-    uses: ./.github/workflows/promote.yml
-    with:
-      image: ghcr.io/${{ github.repository }}:nightly
-      image_asan: ghcr.io/${{ github.repository }}:asan-nightly
-    secrets: inherit
