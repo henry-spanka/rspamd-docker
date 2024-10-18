@@ -27,6 +27,4 @@ jobs:
     with:
       image: ghcr.io/${{ github.repository }}:nightly
       image_asan: ghcr.io/${{ github.repository }}:asan-nightly
-      dockerhub_tags_asan: "${{ needs.build.outputs.dockerhub_tags_asan }}"
-      dockerhub_tags_release: "${{ needs.build.outputs.dockerhub_tags_release }}"
     secrets: inherit
